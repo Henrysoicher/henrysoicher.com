@@ -98,10 +98,12 @@ html {
 
 /* hr */
 hr {
+  margin-block: var(--document-padding);
 	margin-inline: 10%;
 	border: 0;
 	height: 1px;
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--border-color), rgba(0, 0, 0, 0));
+	margin-block: 3rem;
 }
 
 /* name */
@@ -149,7 +151,8 @@ h3 {
 
 /* hero */
 .soich-Hero {
-  padding-inline: var(--document-padding);
+  margin-block-start: var(--document-padding);
+  margin-inline: var(--document-padding);
   box-sizing: border-box;
   max-width: var(--document-max-width);
 }
@@ -275,6 +278,10 @@ dd {
 		gap: 0;
 	}
   
+  .soich-Hero {
+    margin-block-start: 0;
+  }
+
   .soich-Item,
   .soich-Item + .soich-Item {
     /* descriptions go under items on mobile */
@@ -318,12 +325,6 @@ dd {
     margin-top: 1rem;
   }
 
-  .soich-Hero h1,
-  .soich-Hero h2,
-  .soich-Hero h3 {
-    text-align: center;
-  }
-  
   .soich-Logo {
     /* center logo on mobile */
     align-self: center;
