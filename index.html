@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Henry Soicher</title>
+    
+    <!-- todo: look up meta tags for portfolio sites -->
+    <meta name="description" content="Second Year Design Student, New School of Architecture and Design">
+
+    <meta charset="utf8">
+
+    <!-- todo: learn how to do a favicon.ico -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Dependency to view 3D models -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+  <body class="soich">
+    <section class="soich-Header">
+      <div class="soich-Hero">
+        <div class="soich-Hero-content">
+            <h1 class="soich-Name">
+                <span class="soich-Name-first">Henry</span>
+                <span class="soich-Name-last">Soicher</span>
+            </h1>
+
+            <div class="soich-Hero-blurb">
+                <h2>Design Philosophy</h2>
+                <p>I consider a product's design its human interface. I focus on designing interactions that are delightful to the user, without compromising on build quality or practicality.</p>
+                <p>My goal is to create things that are beautiful, simple, and possible from an engineering & manufacturing perspective, and I can't wait to do that for your product.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    
+    <section class="soich-Content" id="projects">
+
+      <div class="soich-Item">
+        <div class="soich-Item-image">
+          <model-viewer src="models/Nabe.glb" poster="models/Nabe/Nabe Hero.44.png" alt="A bread truck" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
+            <div slot="progress-bar"></div>
+          </model-viewer>
+        </div>
+        <div class="soich-Item-description">
+          <h2 id="nabe-bread-bot"><a href="#nabe-bread-bot">Nabe bread bot</a></h2>
+          <h3>A concept for the future of food delivery and mobile vending.</h3>
+          <p>Taco trucks are out, it's time for bread robots to shine. Why shouldn't your croissant grow legs and deliver itself?</p>
+          <p>I undertook this project in order to design a new future for bread, one where the user (and their preferences as far as gluten) came first. This robot is a first-of-its kind delivery system that knows how to determine if you're celiac and will stuff the correct bread roll directly in your mouth, steal your wallet, and charge your card accordingly. Wallets, of course, are returned, but not before we scan your ID and sign you up for the Nabe bread bot newsletter.</p>
+          <dl>
+            <dt>Project:</dt>
+            <dd>Newschool of Architecture and Design</dd>
+
+            <dt>Duration:</dt>
+            <dd>10 weeks</dd>
+
+            <dt>Participants:</dt>
+            <dd>Solo</dd>
+
+            <dt>When:</dt>
+            <dd>Spring 2022</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="soich-Item">
+        <div class="soich-Item-image">
+          <model-viewer src="models/Rocking chair.glb" poster="" alt="A rocking chair" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
+            <div slot="progress-bar"></div>
+          </model-viewer>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const modelViewer = document.querySelector(`model-viewer[src="models/Rocking chair.glb"]`);
+              const sceneSymbol = Object.getOwnPropertySymbols(modelViewer).find(x => x.description === "scene");
+              console.log(modelViewer[sceneSymbol]);
+            })
+          </script>
+        </div>
+        <div class="soich-Item-description">
+          <h2 id="rocking-chair"><a href="#rocking-chair">Rocking chair</a></h2>
+          <h3>A chair that really rocks 🤘.</h3>
+          <p>Taco trucks are out, it's time for bread robots to shine. Why shouldn't your croissant grow legs and deliver itself?</p>
+          <p>I undertook this project in order to design a new future for bread, one where the user (and their preferences as far as gluten) came first. This robot is a first-of-its kind delivery system that knows how to determine if you're celiac and will stuff the correct bread roll directly in your mouth, steal your wallet, and charge your card accordingly. Wallets, of course, are returned, but not before we scan your ID and sign you up for the Nabe bread bot newsletter.</p>
+          <dl>
+            <dt>Project:</dt>
+            <dd>Newschool of Architecture and Design</dd>
+
+            <dt>Duration:</dt>
+            <dd>10 weeks</dd>
+
+            <dt>Participants:</dt>
+            <dd>Solo</dd>
+
+            <dt>When:</dt>
+            <dd>Spring 2022</dd>
+          </dl>
+        </div>
+      </div>
+
+    </section>
+  </body>
+</html>
