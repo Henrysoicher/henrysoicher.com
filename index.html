@@ -51,8 +51,23 @@
             document.addEventListener("DOMContentLoaded", () => {
               const modelViewer = document.querySelector(`model-viewer[src="models/Rocking chair.glb"]`);
               const sceneSymbol = Object.getOwnPropertySymbols(modelViewer).find(x => x.description === "scene");
-              console.log(modelViewer[sceneSymbol]);
-            })
+              window.scene = modelViewer[sceneSymbol];
+
+              
+              const rotateMax = 0.25;
+              const rotateIncrement = 0.005;
+              let direction = 1;
+              function rotate() {
+                const rotation = scene.children[0].rotation.z;
+                if (rotation >= rotateMax || rotation <= rotateMax * -1) {
+                  direction *= -1;
+                }
+                scene.children[0].rotation.z += (rotateIncrement * direction);
+                window.requestAnimationFrame(rotate);
+              }
+
+              window.requestAnimationFrame(rotate);
+            });
           </script>
         </div>
         <div class="soich-Item-description">
@@ -84,7 +99,7 @@
         </div>
         <div class="soich-Item-description">
           <h2 id="nabe-bread-bot"><a href="#nabe-bread-bot">NABE vending bot</a></h2>
-          <h3>A concept for the future of food delivery and mobile vending.</h3>
+          <h3>A concept for the future of food delivery and mobile vending</h3>
           <p>Taco trucks are out, it's time for bread robots to shine. Why shouldn't your croissant grow legs and deliver itself?</p>
           <p>I undertook this project in order to design a new future for bread, one where the user (and their preferences as far as gluten) came first. This robot is a first-of-its kind delivery system that knows how to determine if you're celiac and will stuff the correct bread roll directly in your mouth, steal your wallet, and charge your card accordingly. Wallets, of course, are returned, but not before we scan your ID and sign you up for the Nabe bread bot newsletter.</p>
           <dl>
