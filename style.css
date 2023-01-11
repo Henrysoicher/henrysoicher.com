@@ -146,9 +146,10 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.125rem;
   font-weight: 700;
   color: var(--heading-color);
+  line-height: 1.2;
 }
 
 h2 {
@@ -351,7 +352,8 @@ dd {
   gap: 1em;
   align-items: center;
   justify-content: center;
-  margin: 1.5em;
+  margin-block: 2em;
+  margin-inline: 1.5em;
 }
 
 .soich-Contact a {
@@ -390,7 +392,7 @@ dd {
 
 .soich-Contact a:focus i, 
 .soich-Contact a:hover i {
-  text-shadow: 0 0 4px rgba(var(--gray-900-rgb), 0.25);
+  text-shadow: 0 0 4px rgba(var(--gray-900-rgb), 0.125);
   opacity: 1;
   font-size: 1.25em;
 }
@@ -467,9 +469,9 @@ dd {
   .soich {
     --document-padding: 1.25rem;
   }
-
-  .soich-Name {
-    font-size: 55px;
+  
+  h1 {
+    font-size: 2rem;
   }
 
   h2 {
@@ -499,8 +501,22 @@ dd {
     align-self: center;
   }
 
-  .soich-Item-description {
-    border-left: none;
+  .soich-Resume-responsibilities {
+    margin-inline: 0;
+    padding-inline-start: 1.5rem;
+  }
+
+  dl {
+    /* drop the margin since we're centered now */
+    margin-inline-start: 0;
+  }
+
+  .soich-Contact {
+    /* shrink so it fits on small phones */
+    font-size: 1rem;
+    margin-block: 1.5rem;
+    margin-inline: 1rem;
+    gap: 0.5em;
   }
 }
 
