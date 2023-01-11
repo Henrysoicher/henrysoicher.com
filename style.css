@@ -129,23 +129,36 @@ hr {
 }
 
 /* typography */
-h1 {
-  font-weight: 700;
-  margin: 0;
-	color: var(--heading-color);
-}
-
-h2,
-h3 {
-  font-size: 2em;
-	color: var(--subheading-color);
+h1, h2, h3, h4 {
 	margin: 0;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+	color: var(--heading-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--subheading-color);
+}
+
 h3 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 	font-weight: 500;
 	color: var(--detail-color);
+}
+
+h4 {
+  font-size: 1rem;
+	font-weight: 400;
+	color: var(--detail-color);
+}
+
+.soich-SectionHeading {
+  text-align: center;
 }
 
 /* hero */
@@ -217,6 +230,10 @@ h3 {
   align-items: center;
 }
 
+.soich-Item:first-of-type {
+  margin-block-start: 0;
+}
+
 .soich-Item + .soich-Item {
   flex-direction: row;
 }
@@ -269,6 +286,47 @@ dd {
 	margin-inline-start: 0.75rem;
 }
 
+:is(h1, h2, h3, h4) a {
+  color: inherit !important; /* always be the right color */
+  text-decoration: none;
+}
+
+/* resume */
+.soich-Resume {
+  margin: var(--document-padding);
+}
+.soich-Resume-entry {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+}
+.soich-Resume-company {
+	grid-row-start: 1;
+	grid-column-start: 1;
+}
+.soich-Resume-date {
+	grid-row-start: 1;
+	grid-column-start: 2;
+	white-space: nowrap;
+	text-align: right;
+	align-self: center;
+}
+.soich-Resume-role {
+	grid-row-start: 2;
+	grid-column-start: 1;
+  margin: 0;
+}
+.soich-Resume-responsibilities {
+	grid-row-start: 4;
+	grid-column-start: 1;
+	grid-column-end: span 2;
+  margin-block: 0.75rem;
+  margin-inline: 0.25rem;
+}
+.soich-Resume-responsibilities li {
+  margin: 0;
+}
+
 /* do stuff for tablets here */
 @media only screen and (max-width: 1280px) {
 	.soich-Hero-content {
@@ -289,6 +347,12 @@ dd {
   .soich-Item + .soich-Item {
     /* descriptions go under items on mobile */
     flex-direction: column;
+  }
+
+  .soich-Resume-date {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    text-align: left;
   }
 }
 
