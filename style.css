@@ -34,48 +34,57 @@ html {
   --gray-900: rgb(var(--gray-900-rgb));
   --gray-1000: rgb(var(--gray-1000-rgb));
 
+  --green: rgb(44 191 62);
+  --blue: rgb(27 103 228);
+
   /* semantic aliases */
-  --border-color: rgba(var(--gray-900-rgb), 0.5);
-  --border-color-light: rgba(var(--gray-600-rgb), 0.5);
+  --border-color:rgba(var(--gray-900-rgb), 0.5);
+  --border-color-light:rgba(var(--gray-600-rgb), 0.5);
 
   --heading-color: var(--gray-1000);
   --subheading-color: var(--heading-color);
   --detail-color: var(--gray-900);
   
-	--background-color: rgb(221 238 255);
-	--background-color-alt: rgba(148,187,233,1);
+  --background-color: rgb(221 238 255);
+  --background-color-alt:rgba(148,187,233,1);
   
   --cta-text-color: rgb(var(--gray-200));
   --cta-background-color: rgb(40, 40, 40, 0.50);
 
-	--document-max-width: 75rem;
+  --document-max-width: 75rem;
   --document-padding: 3rem;
+
+  --animation-time: 125ms;
+  --animation-ease: ease-in;
 }
 
 @media (prefers-color-scheme: dark) {
   /* dark mode color scales */
-	.soich {
-		--gray-100-rgb: 10, 10, 10;
-		--gray-200-rgb: 38, 38, 38;
-		--gray-300-rgb: 61, 61, 60;
-		--gray-400-rgb: 85, 85, 84;
-		--gray-500-rgb: 111, 111, 110;
-		--gray-600-rgb: 138, 138, 137;
-		--gray-700-rgb: 175, 175, 174;
-		--gray-800-rgb: 184, 183, 183;
-		--gray-900-rgb: 192, 192, 192;
-		--gray-1000-rgb: 225, 225, 225;
+  .soich {
+    --gray-100-rgb: 10, 10, 10;
+    --gray-200-rgb: 38, 38, 38;
+    --gray-300-rgb: 61, 61, 60;
+    --gray-400-rgb: 85, 85, 84;
+    --gray-500-rgb: 111, 111, 110;
+    --gray-600-rgb: 138, 138, 137;
+    --gray-700-rgb: 175, 175, 174;
+    --gray-800-rgb: 184, 183, 183;
+    --gray-900-rgb: 192, 192, 192;
+    --gray-1000-rgb: 225, 225, 225;
 
-		--background-color: rgb(43, 54, 65);
-		--background-color-alt: rgb(17, 33, 52);
-	}
+    --green: rgb(15 199 38);
+    --blue: rgb(114 164 255);
+
+    --background-color: rgb(43, 54, 65);
+    --background-color-alt: rgb(17, 33, 52);
+  }
 }
 
 .soich {
-	/* default font color */
-	font-family: var(--font-family);
-	color: var(--gray-900);
-	font-weight: 300;
+  /* default font color */
+  font-family: var(--font-family);
+  color: var(--gray-900);
+  font-weight: 300;
   
   /* make fonts look nicer */
   -webkit-font-smoothing: subpixel-antialiased;
@@ -85,7 +94,7 @@ html {
   /* reset HTML's default margin */
   margin: 0;
 
-	/* page background color (header fades to this color) */
+  /* page background color (header fades to this color) */
   background: var(--background-color);
 }
 
@@ -98,6 +107,7 @@ html {
 
 /* hr */
 hr {
+  display: block;
   margin-block: var(--document-padding);
   margin-inline: 10%;
   border: 0;
@@ -112,49 +122,51 @@ hr {
   width: 48rem;
   aspect-ratio: 24 / 4.25;
   max-width: 100%;
+  display: block;
+  margin-inline: auto;
 }
 .soich-Name-first,
 .soich-Name-last {
-	text-transform: uppercase;
-	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: 74px;
-	fill: currentColor;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 74px;
+  fill: currentColor;
 }
 .soich-Name-first {
-	color: var(--gray-900);
+  color: var(--gray-900);
 }
 .soich-Name-last {
-	color: var(--gray-600);
+  color: var(--gray-600);
 }
 
 /* typography */
 h1, h2, h3, h4 {
-	margin: 0;
+  margin: 0;
 }
 
 h1 {
   font-size: 2rem;
   font-weight: 700;
-	color: var(--heading-color);
+  color: var(--heading-color);
 }
 
 h2 {
   font-size: 1.5rem;
-	font-weight: 700;
-	color: var(--subheading-color);
+  font-weight: 700;
+  color: var(--subheading-color);
 }
 
 h3 {
   font-size: 1.25rem;
-	font-weight: 500;
-	color: var(--detail-color);
+  font-weight: 500;
+  color: var(--detail-color);
 }
 
 h4 {
   font-size: 1rem;
-	font-weight: 400;
-	color: var(--detail-color);
+  font-weight: 400;
+  color: var(--detail-color);
 }
 
 .soich-SectionHeading {
@@ -167,6 +179,10 @@ h4 {
   margin-inline: var(--document-padding);
   box-sizing: border-box;
   max-width: var(--document-max-width);
+}
+
+.soich-Hero-hello {
+  display: block;
 }
 
 .soich-Hero-image {
@@ -204,20 +220,20 @@ h4 {
 }
 
 .soich-Hero-content {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: var(--document-padding);
 }
 
 .soich-Hero-blurb {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* content area */
 .soich-Content {
   margin-inline: auto;
-	max-width: var(--document-max-width);
+  max-width: var(--document-max-width);
 }
 
 /* item */
@@ -267,23 +283,23 @@ h4 {
 
 /* detail lists */
 dl {
-	display: grid;
-	grid-template-columns: max-content auto;
-	gap: 0.25rem;
-	font-size: 0.85em;
-	margin-inline-start: 1rem;
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.25rem;
+  font-size: 0.85em;
+  margin-inline-start: 1rem;
 }
 
 dt {
-	grid-column-start: 1;
-	font-weight: 500;
-	text-align: end;
+  grid-column-start: 1;
+  font-weight: 500;
+  text-align: end;
 }
 
 dd {
-	font-weight: 300;
-	grid-column-start: 2;
-	margin-inline-start: 0.75rem;
+  font-weight: 300;
+  grid-column-start: 2;
+  margin-inline-start: 0.75rem;
 }
 
 :is(h1, h2, h3, h4) a {
@@ -301,25 +317,25 @@ dd {
   grid-template-columns: auto;
 }
 .soich-Resume-company {
-	grid-row-start: 1;
-	grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
 .soich-Resume-date {
-	grid-row-start: 1;
-	grid-column-start: 2;
-	white-space: nowrap;
-	text-align: right;
-	align-self: center;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  white-space: nowrap;
+  text-align: right;
+  align-self: center;
 }
 .soich-Resume-role {
-	grid-row-start: 2;
-	grid-column-start: 1;
+  grid-row-start: 2;
+  grid-column-start: 1;
   margin: 0;
 }
 .soich-Resume-responsibilities {
-	grid-row-start: 4;
-	grid-column-start: 1;
-	grid-column-end: span 2;
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: span 2;
   margin-block: 0.75rem;
   margin-inline: 0.25rem;
 }
@@ -327,13 +343,99 @@ dd {
   margin: 0;
 }
 
+/* contact icons */
+.soich-Contact {
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5em;
+}
+
+.soich-Contact a {
+  display: block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  font-size: 2em;
+  text-decoration: none;
+  color: var(--gray-800);
+  border-radius: 0.1em;
+}
+
+.soich-Contact a:focus {
+  outline: none;
+}
+
+.soich-Contact a:focus-visible {
+  /* todo: make this accessible */
+}
+
+.soich-Contact a i {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  opacity: 0.8;
+  transition: font-size var(--animation-time) var(--animation-ease),
+              opacity var(--animation-time) var(--animation-ease),
+              text-shadow var(--animation-time) var(--animation-ease);
+  aspect-ratio: 1 / 1;
+  width: 1em;
+  text-align: center;
+  line-height: 0.95em;
+}
+
+.soich-Contact a:focus i, 
+.soich-Contact a:hover i {
+  text-shadow: 0 0 4px rgba(var(--gray-900-rgb), 0.25);
+  opacity: 1;
+  font-size: 1.25em;
+}
+
+.soich-Contact .icon-phone {
+  color: var(--green);
+}
+
+.soich-Contact .icon-mail {
+  color: var(--blue);
+}
+
+/* copyright */
+.soich-Copyright {
+  margin: var(--document-padding);
+  text-align: center;;
+  font-size: 0.75em;
+  color: var(--gray-600);
+}
+
+.mobile-only {
+  display: none;
+}
+
+.mobile-center {
+  text-align: inherit;
+}
+
 /* do stuff for tablets here */
 @media only screen and (max-width: 1280px) {
-	.soich-Hero-content {
-		/* stack text on mobile */
-		flex-direction: column;
-		gap: 0;
-	}
+  .mobile-only {
+    display: inherit;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+
+  .soich-Hero-content {
+    /* stack text on mobile */
+    /* if we do this, margins don't collapse */
+    /* flex-direction: column; */
+    /* gap: 0; */
+    display: block;
+  }
   
   .soich {
     --document-padding: 2rem;
@@ -375,11 +477,11 @@ dd {
   }
 
   .soich-Hero-content {
-		/* stack text on mobile */
-		flex-direction: column;
-	}
+    /* stack text on mobile */
+    flex-direction: column;
+  }
 
-	.soich-Hero-cta {
+  .soich-Hero-cta {
     /* hide CTA on mobile */
     display: none;
   }
