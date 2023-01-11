@@ -333,6 +333,8 @@ dd {
   grid-column-start: 1;
   margin: 0;
 }
+
+.soich-Resume-description,
 .soich-Resume-responsibilities {
   grid-row-start: 4;
   grid-column-start: 1;
