@@ -235,12 +235,12 @@ h4 {
 .soich-Content {
   margin-inline: auto;
   max-width: var(--document-max-width);
+  margin: var(--document-padding);
 }
 
 /* item */
 .soich-Item {
   max-width: 100%;
-  margin: var(--document-padding);
   display: flex;
   flex-direction: row-reverse;
   gap: var(--document-padding);
@@ -310,7 +310,6 @@ dd {
 
 /* resume */
 .soich-Resume {
-  margin: var(--document-padding);
 }
 .soich-Resume-entry {
   margin-top: 1rem;
