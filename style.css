@@ -413,6 +413,16 @@ dd {
   color: var(--gray-600);
 }
 
+/* skills */
+.soich-Skills {
+  display: flex;
+  flex-direction: row;
+  margin: 1em;
+  align-items: start;
+  justify-content: center;
+}
+
+/* REPSONSIVE */
 .mobile-only {
   display: none;
 }
@@ -517,6 +527,11 @@ dd {
     margin-block: 1.5rem;
     margin-inline: 1rem;
     gap: 0.5em;
+  }
+
+  /* stack skills */
+  .soich-Skills {
+    flex-direction: column;
   }
 }
 
