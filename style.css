@@ -46,7 +46,7 @@ html {
   --detail-color: var(--gray-900);
   
   --background-color: rgb(221 238 255);
-  --background-color-alt:rgba(148,187,233,1);
+  --background-color-alt:rgb(242, 246, 250);
   
   --cta-text-color: rgb(var(--gray-200));
   --cta-background-color: rgb(40, 40, 40, 0.50);
@@ -75,8 +75,8 @@ html {
     --green: rgb(15 199 38);
     --blue: rgb(114 164 255);
 
-    --background-color: rgb(43, 54, 65);
-    --background-color-alt: rgb(17, 33, 52);
+    --background-color: var(--gray-300);
+    --background-color-alt: var(--gray-100);
   }
 }
 
@@ -159,7 +159,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--detail-color);
 }
@@ -235,7 +235,7 @@ h4 {
 .soich-Content {
   margin-inline: auto;
   max-width: var(--document-max-width);
-  margin: var(--document-padding);
+  padding: var(--document-padding);
 }
 
 /* item */
@@ -347,7 +347,7 @@ dd {
 
 /* contact icons */
 .soich-Contact {
-  font-size: 1.25rem;
+  font-size: 1.525rem;
   display: flex;
   flex-direction: row;
   gap: 1em;
