@@ -398,13 +398,10 @@ dd {
   font-size: 1.25em;
 }
 
-.soich-Contact .icon-phone {
-  color: var(--green);
-}
 
-.soich-Contact .icon-mail {
-  color: var(--blue);
-}
+.soich-Contact i::before {
+  color: var(--gray-1000);
+} 
 
 /* copyright */
 .soich-Copyright {
