@@ -234,8 +234,9 @@ h4 {
 /* content area */
 .soich-Content {
   margin-inline: auto;
+  margin-block: var(--document-padding);
+  padding-inline: var(--document-padding);
   max-width: var(--document-max-width);
-  margin: var(--document-padding);
 }
 
 /* item */
