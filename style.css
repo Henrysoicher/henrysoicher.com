@@ -234,6 +234,7 @@ h4 {
 /* content area */
 .soich-Content {
   margin-inline: auto;
+  text-align: center;
   max-width: var(--document-max-width);
   padding: var(--document-padding);
 }
