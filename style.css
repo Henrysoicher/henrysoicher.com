@@ -38,21 +38,22 @@ html {
   --blue: rgb(27 103 228);
 
   /* semantic aliases */
-  --border-color:rgba(var(--gray-900-rgb), 0.5);
-  --border-color-light:rgba(var(--gray-600-rgb), 0.5);
+  --border-color: rgba(var(--gray-900-rgb), 0.5);
+  --border-color-light: rgba(var(--gray-600-rgb), 0.5);
 
   --heading-color: var(--gray-1000);
   --subheading-color: var(--heading-color);
   --detail-color: var(--gray-900);
   
-  --background-color: var(--gray-200);
-  --background-color-alt:var(--gray-100);
+  --background-color: var(--gray-100);
+  --background-color-alt: var(--gray-200);
   
-  --cta-text-color: rgb(var(--gray-200));
-  --cta-background-color: rgb(40, 40, 40, 0.50);
+  --cta-text-color: var(--gray-100);
+  --cta-background-color: rgb(221, 119, 0);
 
   --document-max-width: 75rem;
   --document-padding: 3rem;
+  --blurb-max-width: 39rem;
 
   --animation-time: 125ms;
   --animation-ease: ease-in;
@@ -204,6 +205,13 @@ h4 {
   justify-self: end;
 }
 
+.soich-Hero-cta {
+  display: flex;
+  justify-content: start;
+  width: var(--blurb-max-width);
+  margin: auto;
+}
+
 .soich-Hero-nav a {
   display: block;
   color: var(--gray-800);
@@ -211,17 +219,20 @@ h4 {
   padding: 0.25rem 1rem;
   border-radius: 1rem;
   text-decoration: none;
+  transition: transform 125ms ease-in-out;
 }
 
 .soich-Hero-nav a:hover {
   background-color: var(--gray-200);
+  color: var(--gray-900);
+  transform: scale(1.05);
 }
 
 .soich-Hero-blurb {
   margin: auto;
-  text-align: center;
+  /* text-align: center; */
   font-size: 1.75rem;
-  max-width: 39rem;
+  max-width: var(--blurb-max-width);
   margin: 0 auto;
 }
 
@@ -236,27 +247,25 @@ h4 {
   max-width: 100%;
 }
 
-.soich-Hero-cta {
+.soich-Button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  /* align relative to closest positioned element (i.e. position: relative) */
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  
-  padding: 0 0.35em 0.25em 0.35em;
-  
-  font-size: 3em;
+  padding: 0.5em 1.25em;
+  font-size: 1.5rem;
   color: var(--cta-text-color);
+  font-family: var(--font-family);
   line-height: 1.5;
-  letter-spacing: 0.1em;
   text-decoration: none;
-
   background-color: var(--cta-background-color);
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: transform 125ms ease-in-out;
+}
 
-  border-radius: 1rem;
+.soich-Button:hover {
+  transform: scale(1.05);
 }
 
 /* content area */
@@ -434,6 +443,7 @@ dd {
 /* copyright */
 .soich-Copyright {
   margin: var(--document-padding);
+  margin-top: 10rem;
   text-align: center;;
   font-size: 0.75em;
   color: var(--gray-600);
@@ -512,6 +522,10 @@ dd {
 
   .soich-Hero-blurb {
     font-size: 1.25rem;
+  }
+
+  .soich-Hero-nav {
+    display: none;
   }
 
   .soich-Hero-nav {
