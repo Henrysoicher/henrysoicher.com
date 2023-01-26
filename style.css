@@ -45,8 +45,8 @@ html {
   --subheading-color: var(--heading-color);
   --detail-color: var(--gray-900);
   
-  --background-color: rgb(221 238 255);
-  --background-color-alt:rgba(148,187,233,1);
+  --background-color: var(--gray-200);
+  --background-color-alt:var(--gray-100);
   
   --cta-text-color: rgb(var(--gray-200));
   --cta-background-color: rgb(40, 40, 40, 0.50);
@@ -58,8 +58,8 @@ html {
   --animation-ease: ease-in;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
-  /* dark mode color scales */
   .soich {
     --gray-100-rgb: 10, 10, 10;
     --gray-200-rgb: 38, 38, 38;
@@ -79,6 +79,7 @@ html {
     --background-color-alt: rgb(17, 33, 52);
   }
 }
+*/
 
 .soich {
   /* default font color */
@@ -118,16 +119,13 @@ hr {
 
 /* name */
 .soich-Name {
-  margin-block: var(--document-padding);
-  width: 48rem;
-  aspect-ratio: 24 / 4.25;
+  width: 12rem;
+  aspect-ratio: 432 / 142;
   max-width: 100%;
   display: block;
-  margin-inline: auto;
 }
 .soich-Name-first,
 .soich-Name-last {
-  text-transform: uppercase;
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 74px;
@@ -171,19 +169,59 @@ h4 {
 }
 
 .soich-SectionHeading {
-  text-align: center;
+  text-align: left;
 }
 
 /* hero */
 .soich-Hero {
-  margin-block-start: var(--document-padding);
-  margin-inline: var(--document-padding);
+  padding-inline: var(--document-padding);
+  margin-block-end: var(--document-padding);
   box-sizing: border-box;
   max-width: var(--document-max-width);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--document-padding);
+}
+
+.soich-Hero-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--document-padding);
 }
 
 .soich-Hero-hello {
+  flex: 1;
+}
+
+.soich-Hero-nav {
+  display: flex;
+  gap: 1rem;
+  align-self: start;
+  padding-top: var(--document-padding);
+  justify-self: end;
+}
+
+.soich-Hero-nav a {
   display: block;
+  color: var(--gray-800);
+  font-weight: 500;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+.soich-Hero-nav a:hover {
+  background-color: var(--gray-200);
+}
+
+.soich-Hero-blurb {
+  margin: auto;
+  text-align: center;
+  font-size: 1.75rem;
+  max-width: 39rem;
+  margin: 0;
 }
 
 .soich-Hero-image {
@@ -220,17 +258,6 @@ h4 {
   border-radius: 1rem;
 }
 
-.soich-Hero-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--document-padding);
-}
-
-.soich-Hero-blurb {
-  flex-grow: 1;
-}
-
 /* content area */
 .soich-Content {
   margin-inline: auto;
@@ -250,10 +277,6 @@ h4 {
 
 .soich-Item:first-of-type {
   margin-block-start: 0;
-}
-
-.soich-Item + .soich-Item {
-  flex-direction: row;
 }
 
 .soich-Item-image {
@@ -442,14 +465,6 @@ dd {
   .mobile-center {
     text-align: center;
   }
-
-  .soich-Hero-content {
-    /* stack text on mobile */
-    /* if we do this, margins don't collapse */
-    /* flex-direction: column; */
-    /* gap: 0; */
-    display: block;
-  }
   
   .soich {
     --document-padding: 2rem;
@@ -459,8 +474,7 @@ dd {
     margin-block-start: 0;
   }
 
-  .soich-Item,
-  .soich-Item + .soich-Item {
+  .soich-Item {
     /* descriptions go under items on mobile */
     flex-direction: column;
   }
@@ -490,9 +504,17 @@ dd {
     font-size: 1.5rem;
   }
 
-  .soich-Hero-content {
-    /* stack text on mobile */
+  .soich-Hero-header {
     flex-direction: column;
+    gap: 0;
+  }
+
+  .soich-Hero-blurb {
+    font-size: 1.25rem;
+  }
+
+  .soich-Hero-nav {
+    gap: 0.25rem;
   }
 
   .soich-Hero-cta {
