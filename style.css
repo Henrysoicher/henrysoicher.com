@@ -281,8 +281,17 @@ h4 {
   max-width: 100%;
   display: flex;
   flex-direction: row-reverse;
+  padding: calc(var(--document-padding) / 2);
   gap: var(--document-padding);
   align-items: center;
+  border-radius: 1rem;
+}
+
+.soich-Item:nth-child(even) {
+  background: transparent;
+}
+.soich-Item:nth-child(odd) {
+  background: rgba(var(--gray-200-rgb), 0.5);
 }
 
 .soich-Item:first-of-type {
