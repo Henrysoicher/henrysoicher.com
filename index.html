@@ -22,25 +22,26 @@
 
     <!-- Dependency to view 3D models -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script src="scripts.js"></script>
   </head>
   <body class="soich">
     <section class="soich-Header">
       <div class="soich-Hero">
         <div class="soich-Hero-header">
-            <div class="soich-Hero-hello">
-              <svg class="soich-Name" width="432" height="142" viewBox="0 0 432 142">
-                <text x="0" y="56" class="soich-Name-first">Henry</text>
-                <text x="92" y="140" class="soich-Name-last">Soicher</text>
-              </svg>
-            </div>
-
-            <nav class="soich-Hero-nav">
-              <a href="#projects">Projects</a>
-              <a href="#work-experience">Work</a>
-              <a href="#education">Education</a>
-              <a href="#contact">Contact</a>
-            </nav>
+          <div class="soich-Hero-hello">
+            <svg class="soich-Name" width="432" height="142" viewBox="0 0 432 142">
+              <text x="0" y="56" class="soich-Name-first">Henry</text>
+              <text x="92" y="140" class="soich-Name-last">Soicher</text>
+            </svg>
           </div>
+
+          <nav class="soich-Hero-nav">
+            <a href="#projects">Projects</a>
+            <a href="#work-experience">Work</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
           <div class="soich-Hero-blurb">
             Hey, I’m Henry, a San Diego-based Product Designer and soon-to-be graduate of the NewSchool of Architecture & Design.
@@ -49,6 +50,7 @@
           <div class="soich-Hero-cta">
             <a href="#contact" class="soich-Button">Contact me</a>
           </div>
+        </div>
       </div>
     </section>
 
@@ -57,40 +59,12 @@
 
       <div class="soich-Item">
         <div class="soich-Item-image">
-          <model-viewer src="models/Rocking chair.glb" poster="" alt="A rocking chair" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
+          <model-viewer src="projects/rockingchair/model.glb" poster="" alt="A rocking chair" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
             <div slot="progress-bar"></div>
           </model-viewer>
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              const modelViewer = document.querySelector(`model-viewer[src="models/Rocking chair.glb"]`);
-              const sceneSymbol = Object.getOwnPropertySymbols(modelViewer).find(x => x.description === "scene");
-              window.scene = modelViewer[sceneSymbol];
-
-              function easeOutQuad(x) {
-                return 1 - (1 - x) * (1 - x);
-              }
-
-              const rotateMax = 0.25;
-              const rotateIncrement = 0.005;
-              let direction = 1;
-              let currentRotation = 0;
-              function rotate() {
-                if (currentRotation >= rotateMax || currentRotation <= rotateMax * -1) {
-                  direction *= -1;
-                }
-                currentRotation += rotateIncrement * direction;
-                const rotationProgress = 1 - Math.abs(currentRotation) / rotateMax;
-                const expo = easeOutQuad(rotationProgress);
-                scene.children[0].rotation.z = rotateMax * expo * direction;
-                window.requestAnimationFrame(rotate);
-              }
-
-              window.requestAnimationFrame(rotate);
-            });
-          </script>
         </div>
         <div class="soich-Item-description">
-          <h2 id="rocking-chair"><a href="#rocking-chair">Rocking chair</a></h2>
+          <h2 id="rocking-chair"><a href="rockingchair.html">Rocking chair</a></h2>
           <h3>Comfort design</h3>
           <p>This chair was a study in making something beautiful and modern, but still comfortable. The zero gravity effect of sitting in this rocking chair is easy on the spine and lower back.</p>
           <p>The rocking feature of this chair serves to calm nerves and even helps digestion. 9/10 doctors will fight for your right to rock on, it's true, I read it in a science book entitled "There's only one way to rock: Hard".</p>
@@ -112,7 +86,7 @@
 
       <div class="soich-Item">
         <div class="soich-Item-image">
-          <model-viewer src="models/NABE.glb" alt="A bread bot" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
+          <model-viewer src="projects/nabe/model.glb" alt="A bread bot" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate interaction-prompt="none" camera-controls disable-zoom>
             <div slot="progress-bar"></div>
           </model-viewer>
         </div>

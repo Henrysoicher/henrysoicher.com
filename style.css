@@ -230,23 +230,22 @@ h4 {
 
 .soich-Hero-blurb {
   margin: auto;
-  /* text-align: center; */
   font-size: 1.75rem;
   width: var(--blurb-max-width);
   margin: 0 auto;
 }
 
-.soich-Hero-image {
-  position: relative;
-  width: var(--document-max-width);
-  padding-block: var(--document-padding);
-  box-sizing: border-box;
+.soich-Hero-imageContainer {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  width: var(--document-max-width);
+  max-width: 100%;
+  padding-block-end: var(--document-padding);
 }
 
-.soich-Hero-image img {
-  height: 50vh;
+.soich-Hero-image {
+  height: 60vh;
   max-width: 100%;
   margin: auto;
 }
@@ -453,6 +452,7 @@ dd {
   color: var(--blue);
 }
 
+/* project */
 .soich-Project {
   margin: auto;
   max-width: var(--document-max-width);
@@ -469,11 +469,48 @@ dd {
   background: rgba(var(--gray-200-rgb), 0.5);
 }
 
+.soich-Project-render {
+  max-width: 100%;
+  width: var(--document-max-width);
+  margin: auto;
+}
+
+/* image grid */
+.soich-ImageGrid {
+  padding: calc(var(--document-padding) / 2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: calc(var(--document-padding) / 2);
+  justify-content: center;
+}
+
+.soich-ImageGrid-image {
+  width: 30%;
+  max-height: 15rem;
+}
+
+/* figure */
+.soich-Figure {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.soich-Figure img {
+  background: var(--gray-200);
+  max-height: 15rem;
+}
+
+.soich-Figure figcaption {
+  margin-block: var(--document-padding);
+}
+
 /* copyright */
 .soich-Copyright {
-  margin: var(--document-padding);
-  margin-top: 10rem;
-  text-align: center;;
+  /* margin: var(--document-padding); */
+  /* margin-top: 10rem; */
+  text-align: center;
   font-size: 0.75em;
   color: var(--gray-600);
 }
@@ -601,6 +638,18 @@ dd {
   .soich-Skills {
     flex-direction: column;
   }
+
+  .soich-ImageGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .soich-Figure,
+  .soich-ImageGrid-image {
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
 }
 
 /* Model viewer bits */
