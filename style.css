@@ -232,19 +232,23 @@ h4 {
   margin: auto;
   /* text-align: center; */
   font-size: 1.75rem;
-  max-width: var(--blurb-max-width);
+  width: var(--blurb-max-width);
   margin: 0 auto;
 }
 
 .soich-Hero-image {
   position: relative;
-  margin-top: 2rem;
-  height: 50vh;
+  width: var(--document-max-width);
+  padding-block: var(--document-padding);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .soich-Hero-image img {
-  width: 80rem;
+  height: 50vh;
   max-width: 100%;
+  margin: auto;
 }
 
 .soich-Button {
@@ -447,6 +451,22 @@ dd {
 
 .soich-Contact .icon-mail {
   color: var(--blue);
+}
+
+.soich-Project {
+  margin: auto;
+  max-width: var(--document-max-width);
+}
+
+.soich-Project-section {
+  padding: calc(var(--document-padding) / 2);
+}
+
+.soich-Project-section:nth-child(even) {
+  background: transparent;
+}
+.soich-Project-section:nth-child(odd) {
+  background: rgba(var(--gray-200-rgb), 0.5);
 }
 
 /* copyright */
