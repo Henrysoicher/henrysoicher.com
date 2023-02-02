@@ -499,7 +499,6 @@ dd {
 
 .soich-Figure img {
   background: var(--gray-200);
-  max-height: 15rem;
 }
 
 .soich-Figure figcaption {
