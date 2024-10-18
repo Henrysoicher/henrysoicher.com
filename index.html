@@ -20,34 +20,11 @@
   </head>
   <body>
     <div class="content">
-      <model-viewer orientation="0 0deg 0" src="models/CUSTOM-40-PS-3E-FSS-v2.glb" alt="Mat" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor" environment-image="neutral" interaction-prompt="none" camera-controls disable-zoom></model-viewer>
+      <h1>Hoist AR Demo</h1>
+      <model-viewer orientation="0 0deg 0" src="models/RS Machine.glb" alt="Mat" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor" environment-image="neutral" interaction-prompt="none" camera-controls disable-zoom></model-viewer>
+      <model-viewer orientation="0 0deg 0" src="models/CUSTOM-39-PS-2E-SS.2.glb" alt="Mat" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor" environment-image="neutral" interaction-prompt="none" camera-controls disable-zoom></model-viewer>
       <button onclick="document.querySelector('model-viewer').activateAR()">Preview in your room with AR</button>
-      <h1>For Tim - Custom 40</h1>
     </div>
-  
-    import { WebIO } from '@gltf-transform/core';
-    import { DracoMeshCompression } from '@gltf-transform/extensions';
-    
-    const io = new WebIO()
-        .registerExtensions([DracoMeshCompression])
-        .registerDependencies({
-            'draco3d.encoder': await new DracoEncoderModule(),
-            'draco3d.decoder': await new DracoDecoderModule(),
-        });
-    
-    // Load an uncompressed GLB file.
-    const document = await io.read('./assets/Duck.glb');
-    
-    // Configure compression settings.
-    document.createExtension(DracoMeshCompression)
-        .setRequired(true)
-        .setEncoderOptions({
-            method: DracoMeshCompression.EncoderMethod.EDGEBREAKER,
-            encodeSpeed: 5,
-            decodeSpeed: 5,
-        });
-    
-    // Create compressed GLB, in an ArrayBuffer.
-    const arrayBuffer = await io.writeBinary(document); // Promise<ArrayBuffer>
+  </body>
   </body>
 </html>
